@@ -1,0 +1,980 @@
+/**
+* Author: Aarjab Goudel
+*/
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #cc1616;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e82d2d;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+
+/* ====== Styling for topbar ===== */
+
+.topmenu-section {
+  font-size: 15px;
+  background: #191919;
+  color: rgba(255, 255, 255, 0.6);
+  height: 40px;
+  padding: 0;
+}
+
+.topmenu-section .contact-info i {
+  color: #cc1616;
+  margin-right: 5px;
+  line-height: 0;
+}
+
+.topmenu-section .contact-info a {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.topmenu-section .contact-info a:hover {
+  color: #fff;
+}
+
+
+
+ /* ====== Styles for back to top button ====== */
+
+.back-to-top-button {
+  z-index: 996;
+  position: fixed;
+  visibility: hidden;
+  background: #cc1616;
+  opacity: 0;
+  height: 40px;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  transition: all 0.4s;
+}
+
+.back-to-top-button:hover {
+  color: #fff;
+  background: #e72323;
+}
+
+.back-to-top-button.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-button i {
+  color: #fff;
+  font-size: 28px;
+  line-height: 0;
+}
+
+
+/* # ====== Styles for preloader ====== */
+
+.preloader {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.preloader:before {
+  content: "";
+  position: fixed;
+  left: calc(50% - 30px);
+  top: calc(50% - 30px);
+  border: 6px solid #cc1616;
+  border-radius: 50%;
+  border-top-color: #efefef;
+  height: 60px;
+  width: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Fix delay on mobbile */
+
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Styling for Header section
+--------------------------------------------------------------*/
+.header-section {
+  z-index: 997;
+  background: rgba(25, 25, 25, 0.95);
+  height: 70px;
+  transition: all 0.5s;
+}
+
+.header-section .logo {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header-section .logo img {
+  height: 120px;
+  width: 300px;
+}
+
+.header-section .logo a {
+  color: #fff;
+}
+
+.header-section.fixed-top {
+  background: #191919;
+}
+
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+
+/*--------------------------------------------------------------
+# Styling for Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar ul li {
+  display: flex;
+}
+
+.navbar>ul>li {
+  margin-left: 5px;
+}
+
+@media (max-width: 991px) {
+  .navbar>ul>li {
+    border-bottom: 1px solid #C4C4C4;
+  }
+}
+
+.navbar a,
+.navbar a:focus {
+  color: #fff;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 25px 15px 24px 15px;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  background: #cc1616;
+}
+
+
+/**
+* ======== Styling for Mobile Navigation =======
+*/
+.mobile-nav-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.bx-right-mobile-nav {
+  color: #ed5b5b;
+  display: none;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #cc1616;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .bx-right-mobile-nav {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  bottom: 15px;
+  top: 55px;
+  left: 15px;
+  right: 15px;
+  padding: 10px 0;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  color: #191919;
+  padding: 10px 10px;
+  font-size: 15px;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  background: none;
+  color: #cc1616;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  z-index: 99;
+  padding: 10px 0;
+  margin: 10px 20px;
+  background: #fff;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>a {
+  color: #cc1616;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# ============ Styling for Hero Section =============
+--------------------------------------------------------------*/
+#hero {
+  position: relative;
+  background: url("../images/hero-bg.jpg") top center;
+  background-size: cover;
+  height: calc(100vh - 110px);
+  width: 100%;
+}
+
+#hero:before {
+  position: absolute;
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+#hero h1 {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 56px;
+  text-transform: uppercase;
+}
+
+#hero h2 {
+  font-size: 24px;
+  color: #eee;
+  margin-bottom: 30px;
+}
+
+#hero .btn-get-started {
+  color: #fff;
+  border: 2px solid #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 28px;
+  transition: 0.5s;
+}
+
+#hero .btn-get-started:hover {
+  background: #cc1616;
+  border-color: #cc1616;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    text-align: center;
+  }
+
+  #hero .container {
+    padding-top: 40px;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# ===== Styling for Sections General =========
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.section-title {
+  position: relative;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.section-title h2 {
+  z-index: 2;
+  position: relative;
+  color: #191919;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+}
+
+.section-title p {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+}
+
+.section-title span {
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  color: #f4f4f4;
+  right: 0;
+  left: 0;
+  font-size: 52px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .section-title span {
+    font-size: 38px;
+  }
+}
+
+/*--------------------------------------------------------------
+# ==== Styling for About =======
+--------------------------------------------------------------*/
+.about-section .content h3 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.about-section .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-section .content ul li {
+  padding-bottom: 10px;
+}
+
+.about-section .content ul i {
+  color: #cc1616;
+  font-size: 20px;
+  padding-right: 4px;
+}
+
+.about-section .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# ==== Styling for Services ========
+--------------------------------------------------------------*/
+.services-section .icon-box {
+  padding: 80px 20px;
+  text-align: center;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .icon-box:hover {
+  padding: 70px 20px 90px 20px;
+  background: #cc1616;
+  border-color: #cc1616;
+}
+
+.services-section .icon-box .icon {
+  background: #cc1616;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out 0s;
+  transform-style: preserve-3d;
+}
+
+.services-section .icon-box .icon::before {
+  position: absolute;
+  background: #fce5e5;
+  content: "";
+  left: -8px;
+  top: -8px;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease-out 0s;
+  transform: translateZ(-1px);
+}
+
+.services-section .icon-box .icon i {
+  color: #fff;
+  font-size: 28px;
+}
+
+.services-section .icon-box h4 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.services-section .icon-box h4 a {
+  color: #191919;
+}
+
+.services-section .icon-box p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.services-section .icon-box:hover .icon {
+  background: #fff;
+}
+
+.services-section .icon-box:hover .icon::before {
+  background: #e82d2d;
+}
+
+.services-section .icon-box:hover .icon i {
+  color: #cc1616;
+}
+
+.services-section .icon-box:hover h4 a,
+.services-section .icon-box:hover p {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# ======= Styling for Contact ========
+--------------------------------------------------------------*/
+.contact-section .info-box {
+  color: #444444;
+  text-align: center;
+  padding: 20px 0 30px 0;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+}
+
+.contact-section .info-box i {
+  color: #cc1616;
+  font-size: 32px;
+  border: 2px dotted #f5a0a0;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-section .info-box h3 {
+  color: #777777;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.contact-section .info-box p {
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.contact-section .php-email-form {
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+}
+
+.contact-section .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  font-weight: 600;
+  padding: 15px;
+}
+
+.contact-section .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact-section .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  font-weight: 600;
+  padding: 15px;
+}
+
+.contact-section .php-email-form .loading {
+  display: none;
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.contact-section .php-email-form .loading:before {
+  display: inline-block;
+  content: "";
+  border: 3px solid #18d26e;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  margin: 0 10px -6px 0;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact-section .php-email-form input,
+.contact-section .php-email-form textarea {
+  border-radius: 0;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.contact-section .php-email-form input::focus,
+.contact-section .php-email-form textarea::focus {
+  background-color: #cc1616;
+}
+
+.contact-section .php-email-form input {
+  padding: 10px 15px;
+}
+
+.contact-section .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.contact-section .php-email-form button[type=submit] {
+  background: #cc1616;
+  color: #fff;
+  border: 0;
+  padding: 10px 24px;
+  transition: 0.4s;
+}
+
+.contact-section .php-email-form button[type=submit]:hover {
+  background: #e82d2d;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# ===== Styling for Breadcrumbs =======
+--------------------------------------------------------------*/
+.breadcrumbs {
+  background: #efefef;
+  padding: 15px 0;
+}
+
+.breadcrumbs h2 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  font-size: 14px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  color: #333333;
+  content: "/";
+  padding-right: 10px;
+}
+
+/*--------------------------------------------------------------
+# ===== Styling for Footer ========
+--------------------------------------------------------------*/
+
+.footer-section {
+  background: #0c0c0c;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 0 30px 0;
+}
+
+.footer-section .footer-top {
+  padding: 60px 0 30px 0;
+}
+
+.footer-section .footer-top .footer-info {
+  background: #191919;
+  color: #fff;
+  border-top: 4px solid #cc1616;
+  margin-bottom: 15px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-section .footer-top .footer-info h3 {
+  font-size: 36px;
+  font-weight: 700;
+  padding: 2px 0 2px 0;
+  margin: 0 0 20px 0;
+  line-height: 1;
+}
+
+.footer-section .footer-top .footer-info p {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.footer-section .footer-top .social-links a {
+  display: inline-block;
+  background: #262626;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  padding: 8px 0;
+  height: 36px;
+  width: 36px;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.footer-section .footer-top .social-links a:hover {
+  color: #fff;
+  background: #cc1616;
+  text-decoration: none;
+}
+
+.footer-section .footer-top h4 {
+  color: #fff;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+
+.footer-section .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-section .footer-top .footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section .footer-top .footer-links ul i {
+  color: #ed5b5b;
+  font-size: 18px;
+  padding-right: 2px;
+  line-height: 1;
+}
+
+.footer-section .footer-top .footer-links ul li {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.footer-section .footer-top .footer-links ul a {
+  display: inline-block;
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1;
+}
+
+.footer-section .footer-top .footer-links ul a:hover {
+  color: #eb4444;
+}
+
+.footer-section .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer-section .credits a {
+  color: #e82d2d;
+}
+
+.footer-section .copyright {
+  border-top: 1px solid #262626;
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media (max-width: 575px) {
+  .footer-section .footer-top .footer-info {
+    margin: -20px 0 30px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# ===== Styling for Cookies ========
+--------------------------------------------------------------*/
+.cookie-container {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 365px;
+  bottom: 40px;
+  display: none; 
+}
+
+.card {
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #d2d2dc;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+  box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);
+}
+
+.cookies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.cookies a {
+  text-decoration: none;
+  color: #000;
+  margin-top: 8px;
+}
+
+.cookies a:hover {
+  text-decoration: none;
+  color: blue;
+  margin-top: 8px;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 475px) {
+  .cookie-container {
+    bottom: 70px;
+    width:90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .cookie-container {
+    bottom: 70px;
+    width:350px;
+  }
+  
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) { 
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/*--------------------------------------------------------------
+# ===== Styling for Accordian ========
+--------------------------------------------------------------*/
+.card-body {
+  padding: 1rem 1rem;
+}
+
+.privacy-title {
+  font-size: 16px;
+}
